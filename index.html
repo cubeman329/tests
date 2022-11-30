@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
@@ -7,19 +8,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tests</title>
     <style>
+        body {
+            background: black;
+            color: white;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
         .title {
             border: 2px solid black;
-            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
             background: #bfbfbf;
-
         }
+
         .container {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             align-items: center;
             background: #dfdfdf;
+            height: 75vh;
         }
+
         .test {
             margin: 5px;
             border: 1px solid dimgrey;
@@ -30,14 +38,17 @@
             color: white;
             box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.25), 0 0 1em rgba(0, 0, 0, 0.3);
         }
+
         .go {
             padding: 10px;
             border-radius: 15px;
             font-size: 30px;
             box-shadow: inset 0 -5px 5px rgba(0, 0, 0, 0.25), 0 0 3px rgba(0, 0, 0, 0.3);
+            border: 1px solid dimgrey;
         }
     </style>
 </head>
+
 <body>
     <div>
         <div class="title">
@@ -68,4 +79,5 @@
         </div>
     </div>
 </body>
+
 </html>
