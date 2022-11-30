@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web audio api</title>
+</head>
+<body>
+    <button onclick="osc.volume = '1'">Start</button>
+    <button onclick="osc.volume = '0';">Stop</button>
+
+    <script type="text/javascript">
+
+        const atx = new AudioContext();
+        let osc = atx.createOscillator();
+        let gain = atx.createGain();
+        let compressor = atx.createDynamicsCompressor();
+        let filter = atx.createBiquadFilter();
+        filter.frequency.value = "20000";
+        filter.Q.value = "56.3";
+        filter.gain.value = "10";
+        compressor.threshold.value = "-17.64";
+        compressor.knee.value = "21.72";
+        compressor.ratio.value = "21.8";
+        compressor.attack.value = "0.473";
+        compressor.release.value = "2";
+        gain.value = "10";
+        osc.type = "triangle";
+        osc.frequency.value = "40";
+        osc.connect(filter);
+        osc.connect(gain)
+        filter.connect(compressor);
+        gain.connect(compressor);
+        compressor.connect(atx.destination);
+        osc.start();
+        
+
+
+
+    </script>
+</body>
+</html>
